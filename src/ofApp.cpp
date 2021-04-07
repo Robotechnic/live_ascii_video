@@ -242,11 +242,11 @@ void ofApp::border(ofPixels pixs, int left, int top){
     render.begin();
     ofClear(0);
 
-    for (int x = 0; x < grabber.getWidth(); ++x) {
-        for (int y = 0; y < grabber.getHeight(); ++y){
+    for (int x = 0; x < (int)pixs.getWidth(); ++x) {
+        for (int y = 0; y < (int)pixs.getHeight(); ++y){
             if (compareColor(last,pixs.getColor(x,y),seuil)){
                 ofColor(0);
-                ofDrawRectangle(x,y,1,1);
+                ofDrawRectangle(left+x,top+y,1,1);
                 last = pixs.getColor(x,y);
             }
         }
