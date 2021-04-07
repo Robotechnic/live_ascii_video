@@ -2,6 +2,7 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
+    ofLog()<<"SETUP CAMERA";
     //setup camera
     grabber.setDeviceID(0);
     grabber.setDesiredFrameRate(60);
@@ -11,112 +12,77 @@ void ofApp::setup(){
     //setup font
     font.load("CONSOLA.ttf",10);
 
+    ofLog()<<"SETUP GUI";
     //setup gui
-    gui.setup("Mise en place");
-    gui.setPosition(ofGetWidth()/4,ofGetHeight()/4);
-    gui.setWidthElements(ofGetWidth()/2);
+    this->initScreen = new ofxDatGui(0,0);
+    this->initScreen->setAutoDraw(false);
+    this->initScreen->setLabelAlignment(ofxDatGuiAlignment::CENTER);
+    this->initScreen->addHeader("Live ascii video",false);
 
-    text.setSize(ofGetWidth()/2,ofGetHeight()/2);
+    this->initScreen->update();
+    this->text = this->initScreen->addTextInput("Printables:");
+    this->text->setTextUpperCase(false);
+    this->text->setLabelAlignment(ofxDatGuiAlignment::LEFT);
+    createCam = this->initScreen->addToggle("Create virtual camera",true);
+    this->initScreen->update();
+    this->initScreen->setLabelAlignment(ofxDatGuiAlignment::CENTER);
+    this->initScreen->addButton("OK");
+    this->initScreen->update();
+    this->initScreen->onButtonEvent(this, &ofApp::validateGui);
+    this->initScreen->setPosition(ofGetWidth()/2-this->initScreen->getWidth()/2,ofGetHeight()/2-this->initScreen->getHeight()/2);
 
 
-    gui.add(label.setup("carateresLabel","Caractères a utiliser :"));
-    gui.add(text.setup("caracteres",""));
+    this->globalScreen = new ofxDatGui(0,0);
+    this->globalScreen->setAutoDraw(false);
+    this->globalScreen->addHeader("Setings");
+    this->globalScreen->addFRM();
+    this->seuilSlider = this->globalScreen->addSlider("Seuil",0,255);
 
-    gui.add(camLabel.setup("camLabel","Créer une caméra virtuelle :"));
-    gui.add(createCam.setup("Créer une caméra virtuelle"));
 
-    valider.addListener(this,&ofApp::validateGui);
-    gui.add(valider.setup("Valider"));
-    panel = 0;
 
-    sliderGroup.setup("Seuil de tolérance");
-    sliderGroup.setPosition(0,0);
-    sliderGroup.add(seuil.setup("Tolérance",0,0,255));
-
+    seuilSlider->bind(seuil);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    if (createCam && panel == 1){
+    if (createCam->getChecked() && panel == 1){
         ofPixels p;
 
         ascii.readToPixels(p);
 
         virtualcam.update(p);
     }
+    if (panel == 0){
+        this->initScreen->update();
+    } else if (panel == 1){
+        this->globalScreen->update();
+    }
+
+    updateCam();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    if (panel == 0)
-        gui.draw();
+    if (panel == 0){
+        this->initScreen->draw();
+    }
     else if (panel == 1){
         ofBackground(0);
-        drawCam();
+        ofSetColor(255);
+
 
 
         ascii.draw(0,0);
-        sliderGroup.draw();
+
+        this->globalScreen->draw();
     }
 
 
 }
 
-
-void ofApp::drawCam(){
-    grabber.update();
-
-    float ratiowh = grabber.getWidth()/grabber.getHeight();
-    float ratiohw = grabber.getHeight()/grabber.getWidth();
-    float left = 0;
-    float top = 0;
-    ofPixels pixs =  grabber.getPixels();
-
-
-    if (ofGetHeight()*ratiowh < ofGetWidth()){
-        pixs.resize(ofGetHeight()*ratiowh,ofGetHeight());
-        left = (ofGetWidth()-ofGetHeight()*ratiowh)/2;
-    } else {
-        pixs.resize(ofGetWidth(),ofGetWidth()*ratiohw);
-        top = (ofGetHeight()-ofGetWidth()*ratiohw)/2;
-    }
-
-    int height = font.stringHeight("p");
-    int width = font.stringWidth("p");
-
-    float gray = 0;
-
-    float caracter;
-    //for each "cell"
-    ascii.begin();
-    ofClear(0);
-    ofNoFill();
-    ofSetColor(255);
-    for (int x = 0; x < img.getWidth(); x += width)
-        for (int y = 0; y < img.getHeight(); y += height){
-            //get each pixel of cell and calculate the average
-            gray = pixs.getColor(x,y).r;
-            for (int x1 = x; x1<x+width; x1++)
-                for (int y1 = y; y1<y+height; y1++){
-                    gray = (gray+pixs.getColor(x1,y1).r)/2;
-                }
-
-            if (gray < seuil){
-                caracter = 0;
-            } else {
-               caracter = gray/(255-seuil)*float(caracterList.length());
-            }
-
-            //ofLog()<<caracter;
-            font.drawString(string(1,caracterList[caracter]),x+left,y+top);
-        }
-    ascii.end();
-}
-
-void ofApp::validateGui(){
-    text.saveToFile("caracter.xml");
+void ofApp::validateGui(ofxDatGuiButtonEvent e){
     panel = 1;
-    string caracter = text.getParameter().toString();
+    string caracter = text->getText();
     for (char c: caracter){
         ofFill();
         ofSetColor(255);
@@ -135,7 +101,7 @@ void ofApp::validateGui(){
     }
     ofLog()<<caracterList;
 
-    if (createCam){
+    if (createCam->getChecked()){
         virtualcam.setup(ofGetWidth(),ofGetHeight(),2);
     }
 
@@ -161,6 +127,57 @@ int ofApp::setupAsciiCaracter(ofRectangle letterRect){
     }
     ofLog()<<letterPix;
     return letterPix;
+}
+
+void ofApp::updateCam(){
+    grabber.update();
+
+    float ratiowh = grabber.getWidth()/grabber.getHeight();
+    float ratiohw = grabber.getHeight()/grabber.getWidth();
+    float left = 0;
+    float top = 0;
+
+    img.setFromPixels(grabber.getPixels());
+
+    if (ofGetHeight()*ratiowh < ofGetWidth()){
+        img.resize(ofGetHeight()*ratiowh,ofGetHeight());
+        left = (ofGetWidth()-ofGetHeight()*ratiowh)/2;
+    } else {
+        img.resize(ofGetWidth(),ofGetWidth()*ratiohw);
+        top = (ofGetHeight()-ofGetWidth()*ratiohw)/2;
+    }
+
+    ofPixels pixs = img.getPixels();
+
+    int height = font.stringHeight("p");
+    int width = font.stringWidth("p");
+
+    float gray = 0;
+
+    float caracter;
+    //for each "cell"
+    ascii.begin();
+    ofClear(0);
+
+    for (int x = 0; x < (int)img.getWidth(); x += width)
+        for (int y = 0; y <(int)img.getHeight(); y += height){
+            //get each pixel of cell and calculate the average
+            gray = pixs.getColor(x,y).r;
+            for (int x1 = x; x1<x+width; x1++)
+                for (int y1 = y; y1<y+height; y1++){
+                    gray = (gray+pixs.getColor(x1,y1).r)/2;
+                }
+
+            if (gray < seuil){
+                caracter = 0;
+            } else {
+               caracter = gray/(255-seuil)*float(caracterList.length());
+            }
+
+            //ofLog()<<caracter;
+            font.drawString(string(1,caracterList[caracter]),x+left,y+top);
+        }
+    ascii.end();
 }
 
 ////--------------------------------------------------------------

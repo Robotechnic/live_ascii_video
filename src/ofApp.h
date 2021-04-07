@@ -6,10 +6,10 @@
 #include <ofVideoGrabber.h>
 #include <ofTrueTypeFont.h>
 #include <ofFbo.h>
-#include <ofxGui.h>
+#include <ofxDatGui.h>
 #include <ofGstUtils.h>
 
-#include <ofxV4l2loopback.h>
+#include "ofxV4l2loopback.h"
 
 
 #include <map>
@@ -35,23 +35,33 @@ public:
 //    void gotMessage(ofMessage msg);
 
 private:
-    void validateGui();
+    void validateGui(ofxDatGuiButtonEvent e);
     int setupAsciiCaracter(ofRectangle letterRect);
 
-    void drawCam();
+    void updateCam();
 
     ofVideoGrabber grabber;
     ofTrueTypeFont font;
 
     //setup gui
-    ofxGuiGroup gui;
-    ofxLabel label,camLabel;
-    ofxTextField text;
-    ofxToggle createCam;
-    ofxButton valider;
+    ofxDatGui *initScreen;
 
-    ofxGuiGroup sliderGroup;
-    ofxSlider<int> seuil;
+
+    ofxDatGuiTextInput *text;
+    ofxDatGuiToggle *createCam;
+
+    ofxDatGui *globalScreen;
+    ofxDatGuiSlider *seuilSlider;
+    float seuil;
+
+//    ofxGuiGroup gui;
+//    ofxLabel label,camLabel;
+//    ofxTextField text;
+//    ofxToggle createCam;
+//    ofxButton valider;
+
+//    ofxGuiGroup sliderGroup;
+//    ofxSlider<int> seuil;
 
     //ascii art variable
     string caracterList;

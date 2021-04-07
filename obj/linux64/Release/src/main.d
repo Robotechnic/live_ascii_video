@@ -520,18 +520,27 @@ obj/linux64/Release/src/main.o: \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofCamera.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofEasyCam.h \
  /home/robotechnic/Documents/OFlib/apps/myApps/live_ascii_video/src/ofApp.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGui.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxToggle.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxBaseGui.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSlider.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxInputField.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiUtils.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSliderGroup.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiGroup.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxButton.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxLabel.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxColorPicker.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxPanel.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/ofxDatGui.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiGroups.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiLabel.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiComponent.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiIntObject.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiThemes.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiTheme.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/libs/ofxSmartFont/ofxSmartFont.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiEvents.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiConstants.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiButton.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiSlider.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInputField.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInput.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiFRM.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGui2dPad.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiColorPicker.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiMatrix.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTimeGraph.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiScrollView.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiControls.h \
  /home/robotechnic/Documents/OFlib/addons/ofxV4l2loopback/src/ofxV4l2loopback.h
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/ofMain.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofConstants.h:
@@ -1071,16 +1080,25 @@ obj/linux64/Release/src/main.o: \
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofCamera.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofEasyCam.h:
 /home/robotechnic/Documents/OFlib/apps/myApps/live_ascii_video/src/ofApp.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGui.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxToggle.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxBaseGui.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSlider.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxInputField.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiUtils.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSliderGroup.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiGroup.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxButton.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxLabel.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxColorPicker.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxPanel.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/ofxDatGui.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiGroups.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiLabel.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiComponent.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiIntObject.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiThemes.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiTheme.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/libs/ofxSmartFont/ofxSmartFont.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiEvents.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiConstants.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiButton.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiSlider.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInputField.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInput.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiFRM.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGui2dPad.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiColorPicker.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiMatrix.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTimeGraph.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiScrollView.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiControls.h:
 /home/robotechnic/Documents/OFlib/addons/ofxV4l2loopback/src/ofxV4l2loopback.h:

@@ -15,10 +15,11 @@ Project{
             'src/main.cpp',
             'src/ofApp.cpp',
             'src/ofApp.h',
+            'src/ofxDatGuiCustomFontSize.h'
         ]
 
         of.addons: [
-            'ofxGui',
+            'ofxDatGui',
             'ofxV4l2loopback',
         ]
 

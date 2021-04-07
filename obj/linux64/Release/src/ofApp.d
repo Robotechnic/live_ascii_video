@@ -473,24 +473,73 @@ obj/linux64/Release/src/ofApp.o: \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofBufferObject.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofTessellator.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofFbo.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGui.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxToggle.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/ofxDatGui.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiGroups.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiLabel.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiComponent.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiIntObject.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiThemes.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiTheme.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/ofMain.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofSystemUtils.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofURLFileLoader.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofThreadChannel.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofJson.h \
+ /home/robotechnic/Documents/OFlib/libs/json/include/json.hpp \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameter.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofPoint.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxBaseGui.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofXml.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofTypes.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameterGroup.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/communication/ofSerial.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/communication/ofArduino.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofGLRenderer.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofPolyline.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/of3dGraphics.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/of3dPrimitives.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofMesh.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofNode.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofBitmapFont.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofGraphics.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSlider.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxInputField.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiUtils.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSliderGroup.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiGroup.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxButton.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxLabel.h \
- /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameterGroup.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxColorPicker.h \
- /home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxPanel.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofMatrixStack.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofLight.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofMaterial.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofShader.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofCairoRenderer.h \
+ /usr/include/cairo/cairo.h /usr/include/cairo/cairo-version.h \
+ /usr/include/cairo/cairo-features.h \
+ /usr/include/cairo/cairo-deprecated.h \
  /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofImage.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofRendererCollection.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppBaseWindow.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppGLFWWindow.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppGlutWindow.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundStream.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundPlayer.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofOpenALSoundPlayer.h \
+ /home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fft.h \
+ /home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fftr.h \
+ /home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fft.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundBuffer.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/video/ofVideoPlayer.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/video/ofGstVideoPlayer.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/of3dUtils.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofCamera.h \
+ /home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofEasyCam.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/libs/ofxSmartFont/ofxSmartFont.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiEvents.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiConstants.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiButton.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiSlider.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInputField.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInput.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiFRM.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGui2dPad.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiColorPicker.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiMatrix.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTimeGraph.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiScrollView.h \
+ /home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiControls.h \
  /home/robotechnic/Documents/OFlib/addons/ofxV4l2loopback/src/ofxV4l2loopback.h
 /home/robotechnic/Documents/OFlib/apps/myApps/live_ascii_video/src/ofApp.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofBaseApp.h:
@@ -982,22 +1031,72 @@ obj/linux64/Release/src/ofApp.o: \
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofBufferObject.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofTessellator.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofFbo.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGui.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxToggle.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/ofxDatGui.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiGroups.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiLabel.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiComponent.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiIntObject.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiThemes.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/themes/ofxDatGuiTheme.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/ofMain.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofSystemUtils.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofURLFileLoader.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofThreadChannel.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofJson.h:
+/home/robotechnic/Documents/OFlib/libs/json/include/json.hpp:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameter.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofPoint.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxBaseGui.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofXml.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofTypes.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameterGroup.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/communication/ofSerial.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/communication/ofArduino.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofGLRenderer.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofPolyline.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/of3dGraphics.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/of3dPrimitives.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofMesh.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofNode.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofBitmapFont.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofGraphics.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSlider.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxInputField.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiUtils.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxSliderGroup.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxGuiGroup.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxButton.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxLabel.h:
-/home/robotechnic/Documents/OFlib/libs/openFrameworks/types/ofParameterGroup.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxColorPicker.h:
-/home/robotechnic/Documents/OFlib/addons/ofxGui/src/ofxPanel.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/utils/ofMatrixStack.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofLight.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofMaterial.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/gl/ofShader.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofCairoRenderer.h:
+/usr/include/cairo/cairo.h:
+/usr/include/cairo/cairo-version.h:
+/usr/include/cairo/cairo-features.h:
+/usr/include/cairo/cairo-deprecated.h:
 /home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofImage.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/graphics/ofRendererCollection.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppBaseWindow.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppGLFWWindow.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/app/ofAppGlutWindow.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundStream.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundPlayer.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofOpenALSoundPlayer.h:
+/home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fft.h:
+/home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fftr.h:
+/home/robotechnic/Documents/OFlib/libs/kiss/include/kiss_fft.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/sound/ofSoundBuffer.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/video/ofVideoPlayer.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/video/ofGstVideoPlayer.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/of3dUtils.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofCamera.h:
+/home/robotechnic/Documents/OFlib/libs/openFrameworks/3d/ofEasyCam.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/libs/ofxSmartFont/ofxSmartFont.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiEvents.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/core/ofxDatGuiConstants.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiButton.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiSlider.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInputField.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTextInput.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiFRM.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGui2dPad.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiColorPicker.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiMatrix.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiTimeGraph.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiScrollView.h:
+/home/robotechnic/Documents/OFlib/addons/ofxDatGui/src/components/ofxDatGuiControls.h:
 /home/robotechnic/Documents/OFlib/addons/ofxV4l2loopback/src/ofxV4l2loopback.h:

@@ -1,2 +1,2 @@
-ofxGui
+ofxDatGui
 ofxV4l2loopback
