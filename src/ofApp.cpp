@@ -6,15 +6,14 @@ void ofApp::setup(){
     //setup camera
     grabber.setDeviceID(0);
     grabber.setDesiredFrameRate(60);
-    grabber.setPixelFormat(ofPixelFormat::OF_PIXELS_GRAY);
+    grabber.setPixelFormat(ofPixelFormat::OF_PIXELS_RGB);
     grabber.initGrabber(640,360);
 
-    //setup font
-    font.load("CONSOLA.ttf",10);
 
     ofLog()<<"SETUP GUI";
     //setup gui
     this->initScreen = new ofxDatGui(0,0);
+
     this->initScreen->setAutoDraw(false);
     this->initScreen->setLabelAlignment(ofxDatGuiAlignment::CENTER);
     this->initScreen->addHeader("Live ascii video",false);
@@ -37,10 +36,29 @@ void ofApp::setup(){
     this->globalScreen->addHeader("Setings");
     this->globalScreen->addFRM();
     this->seuilSlider = this->globalScreen->addSlider("Seuil",0,255);
+    this->printablesSize = this->globalScreen->addSlider("Size",2,30);
 
+    this->printablesSize->bind(fontSize);
+    printablesSize->onSliderEvent(this,&ofApp::sliderEvent);
 
+    this->printablesSize->setValue(10);
+    this->font.load("CONSOLA.ttf",10);
 
     seuilSlider->bind(seuil);
+
+    //add renders
+    renders["Ascii art"] = bind(&ofApp::ascii,this,placeholders::_1,placeholders::_2,placeholders::_3);
+    renders["Border"] = bind(&ofApp::border,this,placeholders::_1,placeholders::_2,placeholders::_3);
+    renders["Raw"] = bind(&ofApp::raw,this,placeholders::_1,placeholders::_2,placeholders::_3);
+
+    //then create gui
+    globalScreen->onToggleEvent(this,&ofApp::toggleEvent);
+    ofxDatGuiToggle *t;
+    for (map<string,function<void(ofPixels,int,int)>>::iterator it = renders.begin(); it !=renders.end(); it++){
+        t = globalScreen->addToggle(it->first,it == renders.begin() ? true : false);
+    }
+    this->renderFunction = renders["Raw"];
+
 }
 
 //--------------------------------------------------------------
@@ -48,7 +66,7 @@ void ofApp::update(){
     if (createCam->getChecked() && panel == 1){
         ofPixels p;
 
-        ascii.readToPixels(p);
+        render.readToPixels(p);
 
         virtualcam.update(p);
     }
@@ -67,12 +85,12 @@ void ofApp::draw(){
         this->initScreen->draw();
     }
     else if (panel == 1){
-        ofBackground(0);
+        ofClear(0);
         ofSetColor(255);
 
 
 
-        ascii.draw(0,0);
+        render.draw(0,0);
 
         this->globalScreen->draw();
     }
@@ -105,7 +123,7 @@ void ofApp::validateGui(ofxDatGuiButtonEvent e){
         virtualcam.setup(ofGetWidth(),ofGetHeight(),2);
     }
 
-    ascii.allocate(ofGetWidth(),ofGetHeight());
+    render.allocate(ofGetWidth(),ofGetHeight());
 }
 
 int ofApp::setupAsciiCaracter(ofRectangle letterRect){
@@ -149,6 +167,17 @@ void ofApp::updateCam(){
 
     ofPixels pixs = img.getPixels();
 
+    if (this->renderFunction != NULL)
+        this->renderFunction(pixs,top,left);
+}
+
+void ofApp::sliderEvent(ofxDatGuiSliderEvent e){
+    this->font.load("CONSOLA.ttf",fontSize);
+}
+
+
+void ofApp::ascii(ofPixels pixs, int left, int top){
+    pixs.setImageType(OF_IMAGE_GRAYSCALE);
     int height = font.stringHeight("p");
     int width = font.stringWidth("p");
 
@@ -156,7 +185,7 @@ void ofApp::updateCam(){
 
     float caracter;
     //for each "cell"
-    ascii.begin();
+    render.begin();
     ofClear(0);
 
     for (int x = 0; x < (int)img.getWidth(); x += width)
@@ -177,9 +206,73 @@ void ofApp::updateCam(){
             //ofLog()<<caracter;
             font.drawString(string(1,caracterList[caracter]),x+left,y+top);
         }
-    ascii.end();
+    render.end();
 }
 
+bool ofApp::compareColor(ofColor color1, ofColor color2, float seuil){
+    float r1 = color1.r, r2 = color2.r;
+    float g1 = color1.g, g2 = color2.g;
+    float b1 = color1.b, b2 = color2.b;
+
+    float rMax = r1 > r2 ? r1 : r2;
+    float rMin = r1 > r2 ? r2 : r1;
+
+    float gMax = g1 > g2 ? g1 : g2;
+    float gMin = g1 > g2 ? g2 : g1;
+
+    float bMax = b1 > b2 ? b1 : b2;
+    float bMin = b1 > b2 ? b2 : b1;
+
+    float rDiff = (rMax-rMin)/rMax*100;
+    float gDiff = (gMax-gMin)/gMax*100;
+    float bDiff = (bMax-bMin)/bMax*100;
+
+//    ofLog()<<rDiff<<" "<<gDiff<<" "<<bDiff;
+
+    if ((rDiff+gDiff+bDiff)/3>seuil){
+        return true;
+    }
+
+    return false;
+}
+
+void ofApp::border(ofPixels pixs, int left, int top){
+    ofColor last = ofColor::white;
+
+    render.begin();
+    ofClear(0);
+
+    for (int x = 0; x < grabber.getWidth(); ++x) {
+        for (int y = 0; y < grabber.getHeight(); ++y){
+            if (compareColor(last,pixs.getColor(x,y),seuil)){
+                ofColor(0);
+                ofDrawRectangle(x,y,1,1);
+                last = pixs.getColor(x,y);
+            }
+        }
+    }
+    render.end();
+}
+
+
+void ofApp::raw(ofPixels pixs, int left, int top){
+    render.begin();
+    img.setFromPixels(pixs);
+    img.draw(left,top);
+    render.end();
+}
+
+void ofApp::toggleEvent(ofxDatGuiToggleEvent e){
+    if (this->renders.at(e.target->getLabel()) && e.target->getChecked()){ //check if this is a valid toggle
+        renderFunction = renders[e.target->getLabel()]; //change render function
+
+        //uncheck all others buttons
+        for (map<string,function<void(ofPixels,int,int)>>::iterator it = renders.begin(); it !=renders.end(); it++){
+            if (e.target->getLabel() != it->first)
+                this->globalScreen->getToggle(it->first)->setChecked(false);
+        }
+    }
+}
 ////--------------------------------------------------------------
 void ofApp::keyPressed(int key){
     if (key == OF_KEY_ESC){
@@ -226,7 +319,7 @@ void ofApp::keyPressed(int key){
 void ofApp::windowResized(int w, int h){
     if (panel == 1){
         if (!resize){
-            ofSetWindowShape(ascii.getWidth(),ascii.getHeight());
+            ofSetWindowShape(render.getWidth(),render.getHeight());
             resize = true;
         } else {
             resize = false;

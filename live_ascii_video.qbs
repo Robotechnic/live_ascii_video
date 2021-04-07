@@ -14,8 +14,7 @@ Project{
         files: [
             'src/main.cpp',
             'src/ofApp.cpp',
-            'src/ofApp.h',
-            'src/ofxDatGuiCustomFontSize.h'
+            'src/ofApp.h'
         ]
 
         of.addons: [
